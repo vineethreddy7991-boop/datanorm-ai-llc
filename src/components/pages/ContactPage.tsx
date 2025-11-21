@@ -1,9 +1,92 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, Clock, MapPin } from 'lucide-react';
+import { Mail, Phone, Clock, MapPin, Send } from 'lucide-react';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    salutation: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    country: '',
+    service: '',
+    subject: '',
+    message: '',
+    smsConsent: false,
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const services = [
+    'Data Solutions',
+    'Data Modelling',
+    'Data Architecture',
+    'Data Analysis',
+    'Data Engineering',
+    'Business System Analysis',
+    'Technical Product Ownership',
+    'Medallion Architecture',
+    'Azure',
+    'Microsoft Fabric',
+    'Data Bricks',
+    'Power BI Reporting',
+    'ETL/ELT',
+    'Service/API Integrations',
+    'AI/ML Solutions',
+  ];
+
+  const salutations = ['Mr', 'Ms', 'Mrs', 'Dr'];
+  const countries = ['USA', 'India'];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    if (type === 'checkbox') {
+      setFormData(prev => ({
+        ...prev,
+        [name]: (e.target as HTMLInputElement).checked,
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setSubmitStatus('success');
+      setFormData({
+        salutation: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        country: '',
+        service: '',
+        subject: '',
+        message: '',
+        smsConsent: false,
+      });
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } catch (error) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -181,6 +264,259 @@ export default function ContactPage() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-32 px-8 bg-background">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8 text-center">
+              Send Us Your Details
+            </h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-neon-teal to-accent-cyan mx-auto mb-8" />
+            <p className="font-paragraph text-lg text-light-gray/80 max-w-2xl mx-auto text-center">
+              Fill out the form below and we'll get back to you within 24 hours
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-dark-gray to-medium-gray border border-neon-teal/20 p-8 md:p-12 rounded-xl"
+          >
+            <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Row 1: Salutation, First Name, Last Name */}
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                    Salutation <span className="text-neon-teal">*</span>
+                  </label>
+                  <select
+                    name="salutation"
+                    value={formData.salutation}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph"
+                  >
+                    <option value="">Select Salutation</option>
+                    {salutations.map(sal => (
+                      <option key={sal} value={sal}>{sal}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                    First Name <span className="text-neon-teal">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="John"
+                    className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                    Last Name <span className="text-neon-teal">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="Doe"
+                    className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph"
+                  />
+                </div>
+              </div>
+
+              {/* Row 2: Email, Phone, Country */}
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                    Email <span className="text-neon-teal">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="john@example.com"
+                    className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                    Phone Number <span className="text-neon-teal">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
+                    placeholder="+1 (555) 000-0000"
+                    className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                    Country <span className="text-neon-teal">*</span>
+                  </label>
+                  <select
+                    name="country"
+                    value={formData.country}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph"
+                  >
+                    <option value="">Select Country</option>
+                    {countries.map(country => (
+                      <option key={country} value={country}>{country}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {/* Row 3: Service Selection */}
+              <div>
+                <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                  Service <span className="text-neon-teal">*</span>
+                </label>
+                <select
+                  name="service"
+                  value={formData.service}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph"
+                >
+                  <option value="">Select a Service</option>
+                  {services.map(service => (
+                    <option key={service} value={service}>{service}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Row 4: Subject */}
+              <div>
+                <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                  Subject <span className="text-neon-teal">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="What is this inquiry about?"
+                  className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph"
+                />
+              </div>
+
+              {/* Row 5: Message */}
+              <div>
+                <label className="block font-paragraph text-sm font-medium text-light-gray mb-3">
+                  Message <span className="text-neon-teal">*</span>
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Tell us more about your project..."
+                  rows={6}
+                  className="w-full px-4 py-3 bg-dark-gray border border-neon-teal/30 rounded-lg text-light-gray placeholder-light-gray/50 focus:outline-none focus:border-neon-teal/60 focus:ring-1 focus:ring-neon-teal/30 transition-colors font-paragraph resize-none"
+                />
+              </div>
+
+              {/* SMS Consent Checkbox */}
+              <div className="bg-dark-gray/50 border border-neon-teal/20 p-6 rounded-lg">
+                <div className="flex items-start gap-4">
+                  <input
+                    type="checkbox"
+                    name="smsConsent"
+                    id="smsConsent"
+                    checked={formData.smsConsent}
+                    onChange={handleInputChange}
+                    className="w-5 h-5 mt-1 accent-neon-teal cursor-pointer"
+                  />
+                  <div className="flex-1">
+                    <label htmlFor="smsConsent" className="font-paragraph text-sm text-light-gray/80 cursor-pointer">
+                      I agree to receive SMS updates and promotional messages from DataNorm AI. By checking this box, you consent to receive text messages at the phone number provided. Standard message and data rates may apply. You can opt-out at any time by replying STOP. For more information, please review our{' '}
+                      <a href="#" className="text-neon-teal hover:text-neon-teal/80 transition-colors font-semibold">
+                        Privacy Policy
+                      </a>
+                      {' '}and{' '}
+                      <a href="#" className="text-neon-teal hover:text-neon-teal/80 transition-colors font-semibold">
+                        Terms of Service
+                      </a>
+                      .
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-accent-emerald/10 border border-accent-emerald/30 p-4 rounded-lg"
+                >
+                  <p className="font-paragraph text-sm text-accent-emerald">
+                    ✓ Thank you! Your message has been sent successfully. We'll get back to you soon.
+                  </p>
+                </motion.div>
+              )}
+
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-destructive/10 border border-destructive/30 p-4 rounded-lg"
+                >
+                  <p className="font-paragraph text-sm text-destructive">
+                    ✗ Something went wrong. Please try again or contact us directly.
+                  </p>
+                </motion.div>
+              )}
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-neon-teal to-accent-cyan hover:from-neon-teal/90 hover:to-accent-cyan/90 disabled:from-neon-teal/50 disabled:to-accent-cyan/50 text-background font-semibold rounded-lg py-3 transition-all flex items-center justify-center gap-2"
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-background border-t-transparent rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" />
+                    Send Message
+                  </>
+                )}
+              </Button>
+            </form>
+          </motion.div>
         </div>
       </section>
 
