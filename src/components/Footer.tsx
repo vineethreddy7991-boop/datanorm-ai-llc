@@ -8,6 +8,7 @@ export default function Footer() {
     company: [
       { name: 'Home', path: '/' },
       { name: 'Services', path: '/services' },
+      { name: 'Careers', path: '/careers' },
       { name: 'Contact', path: '/contact' },
     ],
     services: [
