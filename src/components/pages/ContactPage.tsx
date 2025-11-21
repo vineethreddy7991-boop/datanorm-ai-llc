@@ -124,7 +124,7 @@ export default function ContactPage() {
               {/* Why Choose Us */}
               <div className="bg-gradient-to-br from-deep-space-blue to-background border border-neon-teal/20 p-8 rounded-lg">
                 <h3 className="font-heading text-3xl text-white mb-6">
-                  Why Choose Datanorm AI?
+                  Why Choose DataNorm AI?
                 </h3>
                 <div className="space-y-4">
                   {[

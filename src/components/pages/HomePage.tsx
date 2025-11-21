@@ -81,7 +81,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="font-heading text-7xl md:text-8xl lg:text-9xl text-white mb-8">
-              Datanorm AI
+              DataNorm AI
             </h1>
             <p className="font-heading text-2xl md:text-3xl text-neon-teal mb-6">
               Data-Driven Decisions
@@ -139,7 +139,7 @@ export default function HomePage() {
                 To help businesses make smarter, faster, and more efficient decisions using AI-driven insights and modern data solutions.
               </p>
               <p className="font-paragraph text-base text-light-gray/80 leading-relaxed">
-                Datanorm AI was founded with the goal of simplifying and streamlining how businesses use data. After years of experience in software development, backend systems, and data engineering, we bring modern AI capabilities to small and mid-sized businesses that want to operate more efficiently.
+                DataNorm AI was founded with the goal of simplifying and streamlining how businesses use data. After years of experience in software development, backend systems, and data engineering, we bring modern AI capabilities to small and mid-sized businesses that want to operate more efficiently.
               </p>
             </motion.div>
 

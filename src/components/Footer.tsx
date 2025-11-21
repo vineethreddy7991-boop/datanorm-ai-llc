@@ -107,7 +107,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-neon-teal/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-paragraph text-sm text-light-gray/60">
-              © {currentYear} Datanorm AI LLC. All rights reserved.
+              © {currentYear} DataNorm AI LLC. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a

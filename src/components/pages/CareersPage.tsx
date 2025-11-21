@@ -125,7 +125,7 @@ export default function CareersPage() {
             className="text-center mb-16"
           >
             <h2 className="font-heading text-5xl md:text-6xl text-white mb-6">
-              Why Join Datanorm AI?
+              Why Join DataNorm AI?
             </h2>
             <div className="h-1 w-24 bg-neon-teal mx-auto" />
           </motion.div>
