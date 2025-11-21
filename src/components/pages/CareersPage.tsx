@@ -322,6 +322,7 @@ export default function CareersPage() {
           </motion.div>
 
           <div className="space-y-12">
+            {/* Position 1: Academic Researcher */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -334,7 +335,7 @@ export default function CareersPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                   <div>
                     <h3 className="font-heading text-3xl text-white mb-3">
-                      Volunteer Academic Researcher (AI & Data Normalization)
+                      Volunteer Academic Researcher – Data Normalization & Privacy-Preserving AI
                     </h3>
                     <p className="font-paragraph text-sm text-accent-emerald uppercase tracking-wider font-medium">
                       Research & Development
@@ -358,7 +359,7 @@ export default function CareersPage() {
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-accent-emerald" />
                     <span className="font-paragraph text-sm text-light-gray/80">
-                      Max 20 hrs/week
+                      ≤20 hrs/week
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -374,7 +375,7 @@ export default function CareersPage() {
                 {/* Description */}
                 <div className="mb-10">
                   <p className="font-paragraph text-base text-light-gray/80 leading-relaxed">
-                    Conduct independent academic-style research on data normalization and privacy-preserving AI. This is a research-focused volunteer position ideal for F-1 OPT students. You'll lead your own research project, publish findings publicly (arXiv, GitHub, or technical report), and open-source all code and findings. No compensation, equity, or future employment promised—all output remains public and academic.
+                    Lead independent academic research on advanced data normalization, privacy-preserving machine learning, and related topics. This is pure research work—not product or client work. Ideal for F-1 OPT students seeking research experience for STEM OPT extension or future H-1B sponsorship. You'll conduct original research, publish findings under your name, and open-source all code and methodologies.
                   </p>
                 </div>
 
@@ -387,11 +388,12 @@ export default function CareersPage() {
                     </h4>
                     <ul className="space-y-4">
                       {[
-                        'Conduct literature reviews on data normalization techniques',
-                        'Develop benchmarks for privacy-preserving AI methods',
-                        'Publish research results on arXiv, GitHub, or technical reports',
-                        'Open-source all code and research findings',
-                        'Document methodology and results for public dissemination',
+                        'Conduct independent research on advanced data normalization techniques',
+                        'Explore privacy-preserving ML methods and federated learning',
+                        'Develop benchmarks for anonymization and synthetic data tools',
+                        'Publish research results on arXiv, GitHub, or peer-reviewed venues',
+                        'Open-source all code, datasets, and methodologies',
+                        'Document findings for public academic dissemination',
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-gradient-to-r from-accent-emerald to-accent-cyan rounded-full mt-2 flex-shrink-0" />
@@ -411,10 +413,11 @@ export default function CareersPage() {
                     <ul className="space-y-4">
                       {[
                         'Currently on F-1 OPT status',
-                        'Master\'s or PhD in AI, ML, or related field',
-                        'Strong research and analytical skills',
-                        'Ability to work independently on research projects',
-                        'Experience with academic publishing or open-source contribution',
+                        'Master\'s or PhD in AI, ML, Data Science, or related field',
+                        'Strong research methodology and analytical skills',
+                        'Ability to work independently and self-direct research',
+                        'Experience with or willingness to publish academic work',
+                        'Proficiency in Python, TensorFlow, PyTorch, or similar ML frameworks',
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-gradient-to-r from-accent-emerald to-accent-cyan rounded-full mt-2 flex-shrink-0" />
@@ -433,11 +436,12 @@ export default function CareersPage() {
                     </h4>
                     <ul className="space-y-4">
                       {[
-                        'Informal mentorship from experienced researchers',
-                        'Acknowledgment in publications and GitHub repositories',
-                        'Volunteer confirmation letter (for STEM OPT reporting)',
-                        'Flexible research schedule (max 20 hrs/week)',
-                        'Support for academic publication process',
+                        'Guidance and mentorship from experienced engineers',
+                        'Co-authorship or acknowledgment in all publications',
+                        'Official volunteer confirmation letter (for STEM OPT reporting)',
+                        'Flexible research schedule (≤20 hrs/week)',
+                        'Support navigating academic publication process',
+                        'Networking with researchers in AI/ML community',
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-gradient-to-r from-accent-emerald to-accent-cyan rounded-full mt-2 flex-shrink-0" />
@@ -453,7 +457,7 @@ export default function CareersPage() {
                 {/* Important Note */}
                 <div className="bg-accent-emerald/5 border border-accent-emerald/20 p-6 rounded-lg mb-10">
                   <p className="font-paragraph text-sm text-light-gray/80">
-                    <span className="font-semibold text-accent-emerald">Important:</span> This is an unpaid volunteer position. No compensation, equity, or future employment is promised. All research output remains public and academic in nature.
+                    <span className="font-semibold text-accent-emerald">Important Disclaimer:</span> Zero compensation, equity, or future employment promise. All work is public and academic in nature. This role is designed for independent researchers seeking publication and STEM OPT extension opportunities.
                   </p>
                 </div>
 
@@ -464,7 +468,7 @@ export default function CareersPage() {
                       How to Apply
                     </h4>
                     <p className="font-paragraph text-base text-light-gray/80 mb-4">
-                      Interested in this volunteer research opportunity? Send us your resume, CV, and a brief research proposal to:
+                      Send your resume, CV, and a brief research proposal (1-2 pages) outlining your research interests and methodology to:
                     </p>
                     <a
                       href="mailto:research@datanormai.com?subject=Volunteer Academic Researcher Application"
@@ -479,6 +483,49 @@ export default function CareersPage() {
                   <a href="mailto:research@datanormai.com?subject=Volunteer Academic Researcher Application">
                     <Button className="bg-gradient-to-r from-accent-emerald to-accent-cyan hover:from-accent-emerald/90 hover:to-accent-cyan/90 text-background font-semibold rounded-lg">
                       Apply as Volunteer Researcher
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Position 2: Placeholder for Future Opportunity */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-br from-dark-gray to-medium-gray border border-accent-emerald/20 rounded-xl overflow-hidden hover:border-accent-emerald/50 transition-all opacity-60"
+            >
+              {/* Header */}
+              <div className="bg-gradient-to-r from-accent-emerald/10 to-accent-cyan/10 p-8 border-b border-accent-emerald/20">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+                  <div>
+                    <h3 className="font-heading text-3xl text-white mb-3">
+                      More Volunteer Opportunities Coming Soon
+                    </h3>
+                    <p className="font-paragraph text-sm text-accent-emerald uppercase tracking-wider font-medium">
+                      Research & Development
+                    </p>
+                  </div>
+                  <div className="inline-block px-4 py-2 bg-accent-emerald/10 border border-accent-emerald/30 rounded-lg">
+                    <span className="font-paragraph text-sm text-accent-emerald font-semibold">
+                      Coming Soon
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8">
+                <div className="text-center py-12">
+                  <p className="font-paragraph text-base text-light-gray/80 mb-6">
+                    We're developing additional volunteer opportunities in areas such as data engineering, privacy research, and ML systems. Check back soon or reach out to learn more about upcoming roles.
+                  </p>
+                  <a href="mailto:research@datanormai.com?subject=Interest in Future Volunteer Opportunities">
+                    <Button className="bg-gradient-to-r from-accent-emerald to-accent-cyan hover:from-accent-emerald/90 hover:to-accent-cyan/90 text-background font-semibold rounded-lg">
+                      Express Interest
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </a>
