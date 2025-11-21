@@ -303,6 +303,174 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* Volunteer Opportunities */}
+      <section className="py-32 px-8 bg-background">
+        <div className="max-w-[120rem] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8">
+              Volunteer Opportunities
+            </h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-accent-emerald to-accent-cyan mx-auto mb-8" />
+            <p className="font-paragraph text-lg text-light-gray/80 max-w-3xl mx-auto">
+              Make a meaningful impact while gaining hands-on experience in AI and data analytics. Join our volunteer program and contribute to cutting-edge research.
+            </p>
+          </motion.div>
+
+          <div className="space-y-12">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+              className="bg-gradient-to-br from-dark-gray to-medium-gray border border-accent-emerald/20 rounded-xl overflow-hidden hover:border-accent-emerald/50 transition-all"
+            >
+              {/* Header */}
+              <div className="bg-gradient-to-r from-accent-emerald/10 to-accent-cyan/10 p-8 border-b border-accent-emerald/20">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+                  <div>
+                    <h3 className="font-heading text-3xl text-white mb-3">
+                      Volunteer Researcher – AI Product Development
+                    </h3>
+                    <p className="font-paragraph text-sm text-accent-emerald uppercase tracking-wider font-medium">
+                      Research & Development
+                    </p>
+                  </div>
+                  <div className="inline-block px-4 py-2 bg-accent-emerald/10 border border-accent-emerald/30 rounded-lg">
+                    <span className="font-paragraph text-sm text-accent-emerald font-semibold">
+                      Volunteer
+                    </span>
+                  </div>
+                </div>
+
+                {/* Meta Info */}
+                <div className="flex flex-wrap gap-6">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-accent-emerald" />
+                    <span className="font-paragraph text-sm text-light-gray/80">
+                      Remote
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8">
+                {/* Description */}
+                <div className="mb-10">
+                  <p className="font-paragraph text-base text-light-gray/80 leading-relaxed">
+                    Contribute to the development of innovative AI products by conducting market research, analyzing data, and validating prototype ideas. This volunteer position offers a unique opportunity to gain real-world experience in AI product development while working alongside our experienced team.
+                  </p>
+                </div>
+
+                {/* Three Column Layout */}
+                <div className="grid md:grid-cols-3 gap-10 mb-10">
+                  {/* Tasks */}
+                  <div>
+                    <h4 className="font-heading text-lg text-white mb-6">
+                      Key Tasks
+                    </h4>
+                    <ul className="space-y-4">
+                      {[
+                        'Conduct market research on emerging AI tools and technologies',
+                        'Collect and analyze data for product validation',
+                        'Assist in prototype idea validation and testing',
+                        'Document findings and insights for the team',
+                        'Participate in research discussions and brainstorming sessions',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-accent-emerald to-accent-cyan rounded-full mt-2 flex-shrink-0" />
+                          <span className="font-paragraph text-sm text-light-gray/80">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Requirements */}
+                  <div>
+                    <h4 className="font-heading text-lg text-white mb-6">
+                      Requirements
+                    </h4>
+                    <ul className="space-y-4">
+                      {[
+                        'Interest in AI, data analytics, or software development',
+                        'Master\'s degree completed or currently pursuing',
+                        'Strong analytical and research skills',
+                        'Ability to work independently and as part of a team',
+                        'Excellent communication and documentation skills',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-accent-emerald to-accent-cyan rounded-full mt-2 flex-shrink-0" />
+                          <span className="font-paragraph text-sm text-light-gray/80">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Benefits */}
+                  <div>
+                    <h4 className="font-heading text-lg text-white mb-6">
+                      What We Offer
+                    </h4>
+                    <ul className="space-y-4">
+                      {[
+                        'Expert mentorship from experienced researchers',
+                        'Real-world exposure to AI product development',
+                        'Flexible volunteer schedule',
+                        'Certificate of completion',
+                        'Networking opportunities with industry professionals',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-accent-emerald to-accent-cyan rounded-full mt-2 flex-shrink-0" />
+                          <span className="font-paragraph text-sm text-light-gray/80">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Application Section */}
+                <div className="pt-10 border-t border-accent-emerald/20">
+                  <div className="bg-dark-gray/50 p-6 rounded-lg mb-6">
+                    <h4 className="font-heading text-lg text-white mb-4">
+                      How to Apply
+                    </h4>
+                    <p className="font-paragraph text-base text-light-gray/80 mb-4">
+                      Interested in this volunteer opportunity? Send us your resume and a brief note about your interest in AI research to:
+                    </p>
+                    <a
+                      href="mailto:info@datanormai.com?subject=Volunteer Application - AI Product Development"
+                      className="inline-block px-6 py-3 bg-accent-emerald/10 border border-accent-emerald/30 rounded-lg hover:bg-accent-emerald/20 transition-colors"
+                    >
+                      <span className="font-paragraph font-semibold text-accent-emerald">
+                        info@datanormai.com
+                      </span>
+                    </a>
+                  </div>
+
+                  <a href="mailto:info@datanormai.com?subject=Volunteer Application - AI Product Development">
+                    <Button className="bg-gradient-to-r from-accent-emerald to-accent-cyan hover:from-accent-emerald/90 hover:to-accent-cyan/90 text-background font-semibold rounded-lg">
+                      Apply as Volunteer
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Application Process */}
       <section className="py-32 px-8 bg-background">
         <div className="max-w-[120rem] mx-auto">
