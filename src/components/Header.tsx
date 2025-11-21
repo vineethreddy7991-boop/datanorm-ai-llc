@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Image } from '@/components/ui/image';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,12 +42,12 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-neon-teal rounded flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="font-heading text-xl font-bold text-background">D</span>
-            </div>
-            <span className="font-heading text-2xl text-white">
-              Datanorm <span className="text-neon-teal">AI</span>
-            </span>
+            <Image
+              src="https://static.wixstatic.com/media/6c3928_750f8539b5814ef9a0511fac76f827f3~mv2.png"
+              alt="DataNorm AI Logo"
+              width={120}
+              className="h-12 w-auto group-hover:scale-110 transition-transform"
+            />
           </Link>
 
           {/* Desktop Navigation */}
