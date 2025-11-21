@@ -115,44 +115,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Why Join Us Section */}
-      <section className="py-32 px-8 bg-background">
-        <div className="max-w-[120rem] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8">
-              Why Join DataNorm AI?
-            </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-neon-teal to-accent-cyan mx-auto" />
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyJoinUs.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-dark-gray to-medium-gray border border-neon-teal/20 p-8 rounded-xl hover:border-neon-teal/50 transition-all group"
-              >
-                <item.icon className="h-14 w-14 text-neon-teal mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="font-heading text-xl text-white mb-4">
-                  {item.title}
-                </h3>
-                <p className="font-paragraph text-sm text-light-gray/70">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Open Positions */}
       <section className="py-32 px-8 bg-gradient-to-br from-deep-space-blue to-background">
         <div className="max-w-[120rem] mx-auto">
