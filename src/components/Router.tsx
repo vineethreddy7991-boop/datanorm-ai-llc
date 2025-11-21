@@ -5,6 +5,7 @@ import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
 import ServicesPage from '@/components/pages/ServicesPage';
 import ContactPage from '@/components/pages/ContactPage';
+import CareersPage from '@/components/pages/CareersPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactPage />,
+      },
+      {
+        path: "careers",
+        element: <CareersPage />,
       },
       {
         path: "*",
