@@ -36,20 +36,20 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-32 px-8 bg-deep-space-blue overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-teal/10 to-transparent" />
-        <div className="max-w-[100rem] mx-auto relative z-10">
+      <section className="relative py-32 px-8 bg-gradient-to-br from-deep-space-blue to-background overflow-hidden pt-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-teal/10 to-accent-purple/5" />
+        <div className="max-w-[120rem] mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-white mb-6">
+            <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-white mb-8">
               Get In Touch
             </h1>
-            <div className="h-1 w-24 bg-neon-teal mx-auto mb-8" />
-            <p className="font-paragraph text-lg md:text-xl text-light-gray max-w-3xl mx-auto">
+            <div className="h-1 w-24 bg-gradient-to-r from-neon-teal to-accent-cyan mx-auto mb-8" />
+            <p className="font-paragraph text-lg md:text-xl text-light-gray/80 max-w-3xl mx-auto">
               Ready to transform your business with AI-driven insights? We're here to help you get started
             </p>
           </motion.div>
@@ -57,21 +57,21 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-24 px-8 bg-background">
-        <div className="max-w-[100rem] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16">
+      <section className="py-32 px-8 bg-background">
+        <div className="max-w-[120rem] mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20">
             {/* Left Column - Contact Cards */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="font-heading text-4xl md:text-5xl text-white mb-6">
+                <h2 className="font-heading text-5xl md:text-6xl text-white mb-8">
                   Contact Information
                 </h2>
-                <p className="font-paragraph text-lg text-light-gray mb-12">
+                <p className="font-paragraph text-lg text-light-gray/80 mb-12">
                   Reach out to us through any of the following channels. We're always happy to discuss your project and explore how we can help.
                 </p>
               </motion.div>
@@ -84,25 +84,25 @@ export default function ContactPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-deep-space-blue border border-neon-teal/20 p-8 rounded-lg hover:border-neon-teal/50 transition-all group"
+                    className="bg-gradient-to-br from-dark-gray to-medium-gray border border-neon-teal/20 p-8 rounded-xl hover:border-neon-teal/50 transition-all group"
                   >
                     <div className="flex items-start gap-6">
-                      <div className="bg-neon-teal/10 p-4 rounded-lg group-hover:bg-neon-teal/20 transition-colors">
+                      <div className="bg-gradient-to-br from-neon-teal/20 to-accent-cyan/20 p-4 rounded-lg group-hover:from-neon-teal/30 group-hover:to-accent-cyan/30 transition-colors">
                         <item.icon className="h-8 w-8 text-neon-teal" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-heading text-xl text-white mb-2">
+                        <h3 className="font-heading text-xl text-white mb-3">
                           {item.label}
                         </h3>
                         {item.href ? (
                           <a
                             href={item.href}
-                            className="font-paragraph text-lg text-light-gray hover:text-neon-teal transition-colors"
+                            className="font-paragraph text-lg text-light-gray/80 hover:text-neon-teal transition-colors"
                           >
                             {item.value}
                           </a>
                         ) : (
-                          <p className="font-paragraph text-lg text-light-gray">
+                          <p className="font-paragraph text-lg text-light-gray/80">
                             {item.value}
                           </p>
                         )}
@@ -122,11 +122,11 @@ export default function ContactPage() {
               className="space-y-8"
             >
               {/* Why Choose Us */}
-              <div className="bg-gradient-to-br from-deep-space-blue to-background border border-neon-teal/20 p-8 rounded-lg">
-                <h3 className="font-heading text-3xl text-white mb-6">
+              <div className="bg-gradient-to-br from-dark-gray to-medium-gray border border-neon-teal/20 p-8 rounded-xl">
+                <h3 className="font-heading text-3xl text-white mb-8">
                   Why Choose DataNorm AI?
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-5">
                   {[
                     'Highly specialized in AI and backend engineering',
                     'Fast project delivery with high quality',
@@ -134,9 +134,9 @@ export default function ContactPage() {
                     'Strong technical expertise with practical business understanding',
                     'Focus on automation, scalability, and efficiency',
                   ].map((point, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-neon-teal rounded-full mt-2 flex-shrink-0" />
-                      <p className="font-paragraph text-base text-light-gray">
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-2 h-2 bg-gradient-to-r from-neon-teal to-accent-cyan rounded-full mt-2 flex-shrink-0" />
+                      <p className="font-paragraph text-base text-light-gray/80">
                         {point}
                       </p>
                     </div>
@@ -145,8 +145,8 @@ export default function ContactPage() {
               </div>
 
               {/* Industry Experience */}
-              <div className="bg-deep-space-blue border border-neon-teal/20 p-8 rounded-lg">
-                <h3 className="font-heading text-3xl text-white mb-6">
+              <div className="bg-gradient-to-br from-dark-gray to-medium-gray border border-neon-teal/20 p-8 rounded-xl">
+                <h3 className="font-heading text-3xl text-white mb-8">
                   Industry Expertise
                 </h3>
                 <div className="flex flex-wrap gap-3">
@@ -160,9 +160,9 @@ export default function ContactPage() {
                   ].map((expertise, i) => (
                     <div
                       key={i}
-                      className="px-4 py-2 bg-neon-teal/10 border border-neon-teal/30 rounded-lg"
+                      className="px-4 py-2 bg-neon-teal/10 border border-neon-teal/30 rounded-lg hover:bg-neon-teal/20 transition-colors"
                     >
-                      <span className="font-paragraph text-sm text-neon-teal">
+                      <span className="font-paragraph text-sm text-neon-teal font-medium">
                         {expertise}
                       </span>
                     </div>
@@ -171,11 +171,11 @@ export default function ContactPage() {
               </div>
 
               {/* Response Time */}
-              <div className="bg-gradient-to-br from-neon-teal/10 to-primary/10 border border-neon-teal/30 p-8 rounded-lg">
+              <div className="bg-gradient-to-br from-neon-teal/10 to-accent-cyan/10 border border-neon-teal/30 p-8 rounded-xl">
                 <h3 className="font-heading text-2xl text-white mb-4">
                   Quick Response Time
                 </h3>
-                <p className="font-paragraph text-base text-light-gray">
+                <p className="font-paragraph text-base text-light-gray/80">
                   We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.
                 </p>
               </div>
@@ -185,18 +185,18 @@ export default function ContactPage() {
       </section>
 
       {/* Map/Location Section */}
-      <section className="py-24 px-8 bg-deep-space-blue">
-        <div className="max-w-[100rem] mx-auto">
+      <section className="py-32 px-8 bg-gradient-to-br from-deep-space-blue to-background">
+        <div className="max-w-[120rem] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="font-heading text-4xl md:text-5xl text-white mb-6">
+            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8">
               Ready to Start Your Project?
             </h2>
-            <p className="font-paragraph text-lg text-light-gray max-w-2xl mx-auto mb-12">
+            <p className="font-paragraph text-lg text-light-gray/80 max-w-2xl mx-auto mb-16">
               Whether you need data analytics, AI/ML solutions, or custom software development, we're here to bring your vision to life
             </p>
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -223,15 +223,15 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center"
+                  className="text-center p-8 bg-dark-gray/50 border border-neon-teal/20 rounded-xl hover:border-neon-teal/50 transition-all"
                 >
-                  <div className="font-heading text-5xl text-neon-teal/30 mb-4">
+                  <div className="font-heading text-5xl bg-gradient-to-r from-neon-teal to-accent-cyan bg-clip-text text-transparent mb-4">
                     {item.step}
                   </div>
-                  <h3 className="font-heading text-xl text-white mb-2">
+                  <h3 className="font-heading text-xl text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="font-paragraph text-sm text-light-gray">
+                  <p className="font-paragraph text-sm text-light-gray/70">
                     {item.description}
                   </p>
                 </motion.div>

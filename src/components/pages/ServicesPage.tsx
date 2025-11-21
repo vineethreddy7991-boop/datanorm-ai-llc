@@ -41,20 +41,20 @@ export default function ServicesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-32 px-8 bg-deep-space-blue overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-teal/10 to-transparent" />
-        <div className="max-w-[100rem] mx-auto relative z-10">
+      <section className="relative py-32 px-8 bg-gradient-to-br from-deep-space-blue to-background overflow-hidden pt-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-teal/10 to-accent-purple/5" />
+        <div className="max-w-[120rem] mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-white mb-6">
+            <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-white mb-8">
               Our Services
             </h1>
-            <div className="h-1 w-24 bg-neon-teal mx-auto mb-8" />
-            <p className="font-paragraph text-lg md:text-xl text-light-gray max-w-3xl mx-auto">
+            <div className="h-1 w-24 bg-gradient-to-r from-neon-teal to-accent-cyan mx-auto mb-8" />
+            <p className="font-paragraph text-lg md:text-xl text-light-gray/80 max-w-3xl mx-auto">
               Comprehensive AI-driven solutions designed to transform your business operations and drive data-informed decision-making
             </p>
           </motion.div>
@@ -62,8 +62,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 px-8 bg-background">
-        <div className="max-w-[100rem] mx-auto">
+      <section className="py-32 px-8 bg-background">
+        <div className="max-w-[120rem] mx-auto">
           {services.length === 0 ? (
             <div className="text-center py-16">
               <p className="font-paragraph text-lg text-light-gray">
@@ -71,7 +71,7 @@ export default function ServicesPage() {
               </p>
             </div>
           ) : (
-            <div className="space-y-24">
+            <div className="space-y-32">
               {services.map((service, index) => (
                 <motion.div
                   key={service._id}
@@ -79,7 +79,7 @@ export default function ServicesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`grid lg:grid-cols-2 gap-12 items-center ${
+                  className={`grid lg:grid-cols-2 gap-16 items-center ${
                     index % 2 === 1 ? 'lg:grid-flow-dense' : ''
                   }`}
                 >
@@ -87,19 +87,17 @@ export default function ServicesPage() {
                   <div
                     className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}
                   >
-                    <div className="relative overflow-hidden rounded-lg border border-neon-teal/20 group">
+                    <div className="relative overflow-hidden rounded-xl border border-neon-teal/20 group">
                       {service.serviceImage ? (
                         <Image
                           src={service.serviceImage}
                           alt={service.serviceName || 'Service image'}
                           width={800}
-                          className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="w-full h-[400px] bg-deep-space-blue flex items-center justify-center">
-                          <div className="text-neon-teal/30 font-heading text-2xl">
-                            {service.serviceName}
-                          </div>
+                        <div className="w-full h-[450px] bg-gradient-to-br from-dark-gray to-medium-gray flex items-center justify-center">
+                          <div className="text-neon-teal/30 font-heading text-2xl">{service.serviceName}</div>
                         </div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-deep-space-blue/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -110,38 +108,38 @@ export default function ServicesPage() {
 
                   {/* Content */}
                   <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                    <div className="inline-block px-4 py-2 bg-neon-teal/10 border border-neon-teal/30 rounded mb-6">
-                      <span className="font-paragraph text-sm text-neon-teal uppercase tracking-wider">
+                    <div className="inline-block px-4 py-2 bg-neon-teal/10 border border-neon-teal/30 rounded-full mb-8">
+                      <span className="font-paragraph text-sm text-neon-teal uppercase tracking-wider font-medium">
                         Service {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
                     
-                    <h2 className="font-heading text-4xl md:text-5xl text-white mb-6">
+                    <h2 className="font-heading text-4xl md:text-5xl text-white mb-8">
                       {service.serviceName}
                     </h2>
 
                     {service.shortDescription && (
-                      <p className="font-paragraph text-xl text-neon-teal mb-6">
+                      <p className="font-paragraph text-xl text-neon-teal mb-8">
                         {service.shortDescription}
                       </p>
                     )}
 
                     {service.detailedDescription && (
-                      <p className="font-paragraph text-base text-light-gray/80 leading-relaxed mb-6">
+                      <p className="font-paragraph text-base text-light-gray/80 leading-relaxed mb-8">
                         {service.detailedDescription}
                       </p>
                     )}
 
                     {service.keyBenefits && (
-                      <div className="mb-6">
-                        <h3 className="font-heading text-xl text-white mb-4">
+                      <div className="mb-8">
+                        <h3 className="font-heading text-xl text-white mb-6">
                           Key Benefits
                         </h3>
-                        <div className="space-y-3">
+                        <div className="space-y-4">
                           {service.keyBenefits.split('\n').filter(Boolean).map((benefit, i) => (
-                            <div key={i} className="flex items-start gap-3">
-                              <div className="w-1.5 h-1.5 bg-neon-teal rounded-full mt-2 flex-shrink-0" />
-                              <p className="font-paragraph text-base text-light-gray">
+                            <div key={i} className="flex items-start gap-4">
+                              <div className="w-2 h-2 bg-gradient-to-r from-neon-teal to-accent-cyan rounded-full mt-2 flex-shrink-0" />
+                              <p className="font-paragraph text-base text-light-gray/80">
                                 {benefit.trim()}
                               </p>
                             </div>
@@ -151,8 +149,8 @@ export default function ServicesPage() {
                     )}
 
                     {service.targetAudience && (
-                      <div className="mb-8">
-                        <h3 className="font-heading text-xl text-white mb-3">
+                      <div className="mb-10">
+                        <h3 className="font-heading text-xl text-white mb-4">
                           Ideal For
                         </h3>
                         <p className="font-paragraph text-base text-light-gray/80">
@@ -163,14 +161,14 @@ export default function ServicesPage() {
 
                     {service.callToActionUrl ? (
                       <a href={service.callToActionUrl} target="_blank" rel="noopener noreferrer">
-                        <Button className="bg-neon-teal hover:bg-neon-teal/90 text-background font-semibold">
+                        <Button className="bg-gradient-to-r from-neon-teal to-accent-cyan hover:from-neon-teal/90 hover:to-accent-cyan/90 text-background font-semibold rounded-lg">
                           Learn More
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </a>
                     ) : (
                       <Link to="/contact">
-                        <Button className="bg-neon-teal hover:bg-neon-teal/90 text-background font-semibold">
+                        <Button className="bg-gradient-to-r from-neon-teal to-accent-cyan hover:from-neon-teal/90 hover:to-accent-cyan/90 text-background font-semibold rounded-lg">
                           Get Started
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
@@ -185,22 +183,22 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-8 bg-deep-space-blue relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-neon-teal/10 to-primary/10" />
-        <div className="max-w-[100rem] mx-auto relative z-10 text-center">
+      <section className="py-32 px-8 bg-gradient-to-br from-deep-space-blue to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-neon-teal/10 to-accent-purple/10" />
+        <div className="max-w-[120rem] mx-auto relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-5xl md:text-6xl text-white mb-6">
+            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8">
               Let's Build Something Amazing
             </h2>
-            <p className="font-paragraph text-lg text-light-gray max-w-2xl mx-auto mb-12">
+            <p className="font-paragraph text-lg text-light-gray/80 max-w-2xl mx-auto mb-12">
               Ready to leverage AI and data analytics for your business? Contact us to discuss your project
             </p>
             <Link to="/contact">
-              <Button size="lg" className="bg-neon-teal hover:bg-neon-teal/90 text-background px-12 py-6 text-lg font-semibold">
+              <Button size="lg" className="bg-gradient-to-r from-neon-teal to-accent-cyan hover:from-neon-teal/90 hover:to-accent-cyan/90 text-background px-12 py-6 text-lg font-semibold rounded-lg">
                 Contact Us
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

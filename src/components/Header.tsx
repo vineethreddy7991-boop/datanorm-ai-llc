@@ -38,40 +38,40 @@ export default function Header() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-[120rem] mx-auto px-8 py-6">
+      <nav className="max-w-[120rem] mx-auto px-8 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <Image
-              src="https://static.wixstatic.com/media/6c3928_750f8539b5814ef9a0511fac76f827f3~mv2.png"
-              alt="DataNorm AI Logo"
-              width={120}
-              className="h-12 w-auto group-hover:scale-110 transition-transform"
-            />
+            <div className="w-10 h-10 bg-gradient-to-br from-neon-teal to-accent-cyan rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span className="font-heading text-xl font-bold text-background">D</span>
+            </div>
+            <span className="font-heading text-xl font-bold text-white hidden sm:inline">
+              DataNorm <span className="text-neon-teal">AI</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-paragraph text-base transition-colors relative group ${
+                className={`font-paragraph text-sm font-medium transition-all relative group ${
                   location.pathname === link.path
                     ? 'text-neon-teal'
-                    : 'text-light-gray hover:text-white'
+                    : 'text-light-gray/80 hover:text-white'
                 }`}
               >
                 {link.name}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-neon-teal transition-all ${
+                  className={`absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-neon-teal to-accent-cyan transition-all ${
                     location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
               </Link>
             ))}
             <Link to="/contact">
-              <Button className="bg-neon-teal hover:bg-neon-teal/90 text-background font-semibold">
+              <Button className="bg-gradient-to-r from-neon-teal to-accent-cyan hover:from-neon-teal/90 hover:to-accent-cyan/90 text-background font-semibold text-sm px-6 py-2 rounded-lg">
                 Get Started
               </Button>
             </Link>
@@ -104,17 +104,17 @@ export default function Header() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`font-paragraph text-lg transition-colors ${
+                  className={`font-paragraph text-base font-medium transition-colors ${
                     location.pathname === link.path
                       ? 'text-neon-teal'
-                      : 'text-light-gray hover:text-white'
+                      : 'text-light-gray/80 hover:text-white'
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
               <Link to="/contact" className="mt-4">
-                <Button className="w-full bg-neon-teal hover:bg-neon-teal/90 text-background font-semibold">
+                <Button className="w-full bg-gradient-to-r from-neon-teal to-accent-cyan hover:from-neon-teal/90 hover:to-accent-cyan/90 text-background font-semibold">
                   Get Started
                 </Button>
               </Link>
